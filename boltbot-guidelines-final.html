@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BoltBot⚡ User Guidelines</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #7289DA;
+            --secondary-color: #99AAB5;
+            --background-color: #1E1F22;
+            --text-color: #FFFFFF;
+            --card-background: #2C2F33;
+            --accent-color: #43B581;
+            --danger-color: #f04747;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            background-image: 
+                radial-gradient(circle at 25% 25%, rgba(114, 137, 218, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(67, 181, 129, 0.05) 0%, transparent 50%);
+            background-attachment: fixed;
+            padding-top: 80px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            background-color: rgba(44, 47, 51, 0.98);
+            backdrop-filter: blur(10px);
+            padding: 15px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo-title {
+            display: flex;
+            align-items: center;
+        }
+
+        .profile-picture {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 15px;
+            border: 2px solid var(--primary-color);
+            box-shadow: 0 0 10px rgba(114, 137, 218, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            object-fit: cover;
+        }
+
+        .profile-picture:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(114, 137, 218, 0.5);
+        }
+
+        h1 {
+            color: var(--text-color);
+            font-size: 1.8em;
+            font-weight: 700;
+        }
+
+        .invite-button {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(67, 181, 129, 0.2);
+        }
+
+        .invite-button:hover {
+            background-color: #3ca374;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(67, 181, 129, 0.3);
+        }
+
+        h2 {
+            color: var(--primary-color);
+            margin-top: 60px;
+            margin-bottom: 20px;
+            font-weight: 600;
+            font-size: 1.8em;
+        }
+
+        .guidelines-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .guideline {
+            background-color: var(--card-background);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .guideline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+        }
+
+        .guideline:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .guideline h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+            font-size: 1.2em;
+            margin-bottom: 15px;
+        }
+
+        .reason {
+            font-style: italic;
+            color: var(--secondary-color);
+            margin-top: 15px;
+            font-size: 0.9em;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(153, 170, 181, 0.3);
+            font-size: 0.9em;
+            color: var(--secondary-color);
+        }
+
+        .contact-section {
+            background-color: var(--card-background);
+            border-radius: 15px;
+            padding: 30px;
+            margin-top: 60px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-section h2 {
+            margin-top: 0;
+        }
+
+        .contact-link {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .contact-link:hover {
+            color: #3ca374;
+        }
+
+        .changes-section {
+            background-color: rgba(240, 71, 71, 0.1);
+            border-left: 4px solid var(--danger-color);
+            padding: 20px;
+            border-radius: 0 15px 15px 0;
+            margin-top: 40px;
+        }
+
+        .changes-section h2 {
+            color: var(--danger-color);
+            margin-top: 0;
+        }
+
+        .feature-list {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 30px;
+        }
+
+        .feature-item {
+            background-color: var(--card-background);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .feature-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .feature-icon {
+            font-size: 24px;
+            margin-right: 15px;
+            color: var(--primary-color);
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .logo-title {
+                margin-bottom: 15px;
+            }
+
+            .guidelines-grid {
+                grid-template-columns: 1fr;
+            }
+
+            body {
+                padding-top: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <div class="header-content">
+            <div class="logo-title">
+                <img src="https://cdn.discordapp.com/attachments/1283219894954885151/1287538594491273318/Screenshot_20240802_172939_Photos.jpg?ex=66f1e942&is=66f097c2&hm=f0552d29946056d5dd5ecfea46f79fabdba07300caa3305deb7de357b871826b&" alt="BoltBot Profile Picture" class="profile-picture">
+                <h1>BoltBot⚡</h1>
+            </div>
+            <a href="https://discord.com/oauth2/authorize?client_id=1250114494081007697" class="invite-button" target="_blank" rel="noopener noreferrer">Invite BoltBot⚡</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <h2>User Guidelines</h2>
+        
+        <p>Please follow these guidelines when interacting with BoltBot⚡ on Discord:</p>
+
+        <div class="guidelines-grid">
+            <div class="guideline">
+                <h3>1. No Spamming or Flooding</h3>
+                <p>Do not spam or flood BoltBot⚡ with excessive requests.</p>
+                <p class="reason"><strong>Reason:</strong> This disrupts the conversation and can negatively affect other users' experience. Use BoltBot⚡ responsibly.</p>
+            </div>
+
+            <div class="guideline">
+                <h3>2. No Offensive Content</h3>
+                <p>Avoid posting or sharing offensive, hateful, or explicit content with BoltBot⚡.</p>
+                <p class="reason"><strong>Reason:</strong> Such content violates Discord's Terms of Service and harms the community. BoltBot⚡ aims to provide a positive and respectful experience.</p>
+            </div>
+
+            <div class="guideline">
+                <h3>3. No Impersonation or Harassment</h3>
+                <p>Do not use BoltBot⚡ to impersonate or harass other users.</p>
+                <p class="reason"><strong>Reason:</strong> Impersonation and harassment are unacceptable and can lead to serious consequences. BoltBot⚡ is here to assist and enhance the server experience.</p>
+            </div>
+
+            <div class="guideline">
+                <h3>4. No Self-Promotion or Advertising</h3>
+                <p>Refrain from using BoltBot⚡ for self-promotion, advertising, or soliciting.</p>
+                <p class="reason"><strong>Reason:</strong> Unsolicited promotions or requests are not permitted. BoltBot⚡ is intended to enrich conversations, not to serve as a promotional tool.</p>
+            </div>
+
+            <div class="guideline">
+                <h3>5. No Misuse of AI Capabilities</h3>
+                <p>Do not attempt to manipulate or exploit BoltBot⚡ in ways that are inconsistent with its intended use.</p>
+                <p class="reason"><strong>Reason:</strong> Misusing or manipulating BoltBot⚡ undermines its purpose and can negatively affect its performance and user experience.</p>
+            </div>
+
+            <div class="guideline">
+                <h3>6. No Unauthorized Manipulation</h3>
+                <p>Do not attempt to interfere with or alter BoltBot⚡'s internal workings.</p>
+                <p class="reason"><strong>Reason:</strong> Unauthorized manipulation can disrupt the bot's functionality and lead to severe consequences. BoltBot⚡ is designed to be a safe and enjoyable part of your server.</p>
+            </div>
+        </div>
+
+        <h2>Key Features</h2>
+        <ul class="feature-list">
+            <li class="feature-item">
+                <span class="feature-icon">⚡</span>
+                <div>
+                    <h3>Lightning-Fast Responses</h3>
+                    <p>BoltBot⚡ provides quick and accurate responses to your queries.</p>
+                </div>
+            </li>
+            <li class="feature-item">
+                <span class="feature-icon">🛠️</span>
+                <div>
+                    <h3>Customizable Commands</h3>
+                    <p>Tailor BoltBot⚡ to your server's needs with customizable commands.</p>
+                </div>
+            </li>
+            <li class="feature-item">
+                <span class="feature-icon">🎵</span>
+                <div>
+                    <h3>Music Playback</h3>
+                    <p>Enjoy high-quality music playback in your voice channels.</p>
+                </div>
+            </li>
+        </ul>
+
+        <div class="changes-section">
+            <h2>Changes to These Guidelines</h2>
+            <p>We may update these guidelines periodically. Changes will be posted here with an updated effective date. Please review this policy regularly.</p>
+        </div>
+
+        <div class="contact-section">
+            <h2>Contact Us</h2>
+            <p>For questions or concerns about these guidelines, join our Discord server at <a href="https://discord.gg/bolt" class="contact-link">https://discord.gg/bolt</a>.</p>
+        </div>
+
+        <p>By using BoltBot⚡, you agree to these guidelines. Thank you for helping us create a better experience.</p>
+
+        <div class="footer">
+            <strong>BoltBot⚡ Team</strong>
+        </div>
+    </div>
+
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            var header = document.getElementById('header');
+            var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            if (scrollTop > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>
